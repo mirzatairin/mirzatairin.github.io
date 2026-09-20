@@ -23,7 +23,7 @@
 
     --border: #e5e1e2;
 
-    /* Adjust this value to make sidebar wider or narrower */
+    /* Adjust sidebar width here (e.g., 320px, 380px, 400px) */
     --sidebar-width: 380px;
 }
 
@@ -47,6 +47,7 @@ body {
     background-color: var(--soft-white);
     color: var(--text);
     line-height: 1.8;
+    overflow-x: hidden;
 }
 
 
@@ -70,7 +71,6 @@ body {
 
     padding: 55px 40px 35px;
 
-    /* Prevents horizontal overflow blowout when sidebar is narrow */
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -82,7 +82,7 @@ body {
 
 .sidebar-header {
     margin-bottom: 55px;
-    min-width: 0; /* Allows children text to shrink/wrap cleanly */
+    min-width: 0;
 }
 
 .sidebar-header h1 {
@@ -94,8 +94,7 @@ body {
     letter-spacing: 1px;
 
     margin-bottom: 16px;
-    
-    /* Ensures title wraps smoothly if sidebar width is reduced */
+
     word-wrap: break-word;
 }
 
@@ -216,10 +215,12 @@ body {
 
 .main-content {
     margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
 
-    max-width: 1000px;
+    max-width: 1100px;
 
-    padding: 0 80px;
+    /* Dynamic side padding for ultra-clean scaling across screens */
+    padding: 0 clamp(30px, 5vw, 80px);
 }
 
 
@@ -230,8 +231,8 @@ body {
 .content-section {
     min-height: 100vh;
 
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 
     border-bottom: 1px solid var(--border);
 }
@@ -239,13 +240,13 @@ body {
 .content-section h2 {
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 32px;
+    font-size: clamp(26px, 4vw, 32px);
 
     font-weight: 400;
 
     letter-spacing: 0.5px;
 
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 
     position: relative;
 }
@@ -268,6 +269,7 @@ body {
 
 
 .section-content {
+    width: 100%;
     max-width: 800px;
 }
 
@@ -284,10 +286,8 @@ body {
     font-size: 15px;
     color: var(--text-light);
 
-    /* Aligns text evenly on both left and right edges (Google Doc style) */
+    /* Google Doc style alignment on desktop */
     text-align: justify;
-
-    /* Adds subtle hyphenation so justified text doesn't create awkward gaps */
     hyphens: auto;
 }
 
@@ -514,64 +514,7 @@ footer {
 
 
 /* =========================================
-   15. MOBILE
-========================================= */
-
-@media (max-width: 800px) {
-
-    .sidebar {
-        position: relative;
-
-        width: 100%;
-        height: auto;
-
-        padding: 30px 25px;
-    }
-
-    .sidebar-header {
-        margin-bottom: 25px;
-    }
-
-    .navigation {
-        gap: 3px;
-    }
-
-    .sidebar-footer {
-        margin-top: 25px;
-
-        padding-top: 20px;
-
-        flex-direction: row;
-
-        flex-wrap: wrap;
-
-        gap: 15px;
-    }
-
-    .main-content {
-        margin-left: 0;
-
-        padding: 0 25px;
-    }
-
-    .content-section {
-        min-height: auto;
-
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-
-    .content-section h2 {
-        font-size: 28px;
-
-        margin-bottom: 35px;
-    }
-
-}
-
-
-/* =========================================
-   16. EDUCATION & EXPERIENCE
+   15. EDUCATION & EXPERIENCE
 ========================================= */
 
 .timeline-item {
@@ -620,7 +563,7 @@ footer {
 
 
 /* =========================================
-   17. PROFILE PHOTO
+   16. PROFILE PHOTO
 ========================================= */
 
 .profile-photo {
@@ -636,4 +579,78 @@ footer {
     margin-bottom: 20px;
 
     border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================
+   17. RESPONSIVE / MEDIA QUERIES
+========================================= */
+
+/* Tablets & Small Laptops (Adjusts sidebar proportions smoothly) */
+@media (max-width: 1024px) {
+    :root {
+        --sidebar-width: 320px;
+    }
+}
+
+/* Mobile Devices & Small Tablets */
+@media (max-width: 800px) {
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+
+        padding: 40px 25px;
+    }
+
+    .sidebar-header {
+        margin-bottom: 25px;
+    }
+
+    .navigation {
+        gap: 3px;
+    }
+
+    .sidebar-footer {
+        margin-top: 25px;
+
+        padding-top: 20px;
+
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+
+        padding: 0 20px;
+    }
+
+    .content-section {
+        min-height: auto;
+
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .content-section h2 {
+        font-size: 26px;
+
+        margin-bottom: 30px;
+    }
+
+    /* Prevents wide gaps between words on narrow mobile screens */
+    .section-content p,
+    .research-item p,
+    .timeline-item p,
+    .publication p {
+        text-align: left;
+    }
+
 }
