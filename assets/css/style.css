@@ -23,7 +23,8 @@
 
     --border: #e5e1e2;
 
-    --sidebar-width: 300px;
+    /* Adjust this value to make sidebar wider or narrower */
+    --sidebar-width: 380px;
 }
 
 
@@ -69,7 +70,9 @@ body {
 
     padding: 55px 40px 35px;
 
+    /* Prevents horizontal overflow blowout when sidebar is narrow */
     overflow-y: auto;
+    overflow-x: hidden;
 
     z-index: 1000;
 }
@@ -79,6 +82,7 @@ body {
 
 .sidebar-header {
     margin-bottom: 55px;
+    min-width: 0; /* Allows children text to shrink/wrap cleanly */
 }
 
 .sidebar-header h1 {
@@ -90,6 +94,9 @@ body {
     letter-spacing: 1px;
 
     margin-bottom: 16px;
+    
+    /* Ensures title wraps smoothly if sidebar width is reduced */
+    word-wrap: break-word;
 }
 
 .sidebar-header p {
@@ -276,13 +283,14 @@ body {
     margin-bottom: 22px;
     font-size: 15px;
     color: var(--text-light);
-    
+
     /* Aligns text evenly on both left and right edges (Google Doc style) */
     text-align: justify;
-    
+
     /* Adds subtle hyphenation so justified text doesn't create awkward gaps */
     hyphens: auto;
 }
+
 
 /* =========================================
    9. RESEARCH
@@ -560,6 +568,8 @@ footer {
     }
 
 }
+
+
 /* =========================================
    16. EDUCATION & EXPERIENCE
 ========================================= */
