@@ -28,7 +28,7 @@
        Change this number to resize sidebar.
        Example: 280px, 300px, 320px
     ===================================== */
-    --sidebar-width: 180px;
+    --sidebar-width: 100px;
 }
 
 
