@@ -23,8 +23,7 @@
 
     --border: #e5e1e2;
 
-    /* Adjust sidebar width here (e.g., 320px, 380px, 400px) */
-    --sidebar-width: 200px;
+    --sidebar-width: 280px;
 }
 
 
@@ -47,7 +46,6 @@ body {
     background-color: var(--soft-white);
     color: var(--text);
     line-height: 1.8;
-    overflow-x: hidden;
 }
 
 
@@ -72,7 +70,6 @@ body {
     padding: 55px 40px 35px;
 
     overflow-y: auto;
-    overflow-x: hidden;
 
     z-index: 1000;
 }
@@ -82,7 +79,6 @@ body {
 
 .sidebar-header {
     margin-bottom: 55px;
-    min-width: 0;
 }
 
 .sidebar-header h1 {
@@ -94,8 +90,6 @@ body {
     letter-spacing: 1px;
 
     margin-bottom: 16px;
-
-    word-wrap: break-word;
 }
 
 .sidebar-header p {
@@ -215,12 +209,10 @@ body {
 
 .main-content {
     margin-left: var(--sidebar-width);
-    width: calc(100% - var(--sidebar-width));
 
-    max-width: 1100px;
+    max-width: 1000px;
 
-    /* Dynamic side padding for ultra-clean scaling across screens */
-    padding: 0 clamp(30px, 5vw, 80px);
+    padding: 0 80px;
 }
 
 
@@ -231,8 +223,8 @@ body {
 .content-section {
     min-height: 100vh;
 
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 120px;
+    padding-bottom: 120px;
 
     border-bottom: 1px solid var(--border);
 }
@@ -240,13 +232,13 @@ body {
 .content-section h2 {
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(26px, 4vw, 32px);
+    font-size: 32px;
 
     font-weight: 400;
 
     letter-spacing: 0.5px;
 
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 
     position: relative;
 }
@@ -269,26 +261,20 @@ body {
 
 
 .section-content {
-    width: 100%;
-    max-width: 800px;
+    max-width: 720px;
 }
 
 
 /* =========================================
-   8. PARAGRAPHS & TEXT ALIGNMENT
+   8. PARAGRAPHS
 ========================================= */
 
-.section-content p,
-.research-item p,
-.timeline-item p,
-.publication p {
+.section-content p {
     margin-bottom: 22px;
-    font-size: 15px;
-    color: var(--text-light);
 
-    /* Google Doc style alignment on desktop */
-    text-align: justify;
-    hyphens: auto;
+    font-size: 15px;
+
+    color: var(--text-light);
 }
 
 
@@ -320,9 +306,57 @@ body {
     margin-bottom: 0;
 }
 
+/* =========================================
+   10. EDUCATION & EXPERIENCE
+========================================= */
+
+.timeline-item {
+    padding: 30px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.timeline-item:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.timeline-date {
+    display: block;
+
+    color: var(--pink);
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+.timeline-item h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 21px;
+
+    font-weight: 400;
+
+    margin-bottom: 5px;
+}
+
+.timeline-institution {
+    font-size: 13px !important;
+
+    color: var(--text) !important;
+
+    margin-bottom: 12px !important;
+}
+
+.timeline-item p:last-child {
+    margin-bottom: 0;
+}
+
 
 /* =========================================
-   10. PUBLICATIONS
+   11. PUBLICATIONS
 ========================================= */
 
 .publication {
@@ -514,86 +548,9 @@ footer {
 
 
 /* =========================================
-   15. EDUCATION & EXPERIENCE
+   15. MOBILE
 ========================================= */
 
-.timeline-item {
-    padding: 30px 0;
-
-    border-top: 1px solid var(--border);
-}
-
-.timeline-item:last-child {
-    border-bottom: 1px solid var(--border);
-}
-
-.timeline-date {
-    display: block;
-
-    color: var(--pink);
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 10px;
-}
-
-.timeline-item h3 {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 21px;
-
-    font-weight: 400;
-
-    margin-bottom: 5px;
-}
-
-.timeline-institution {
-    font-size: 13px !important;
-
-    color: var(--text) !important;
-
-    margin-bottom: 12px !important;
-}
-
-.timeline-item p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* =========================================
-   16. PROFILE PHOTO
-========================================= */
-
-.profile-photo {
-    display: block;
-
-    width: 100px;
-    height: 100px;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    margin-bottom: 20px;
-
-    border: 2px solid rgba(255, 255, 255, 0.15);
-}
-
-
-/* =========================================
-   17. RESPONSIVE / MEDIA QUERIES
-========================================= */
-
-/* Tablets & Small Laptops (Adjusts sidebar proportions smoothly) */
-@media (max-width: 1024px) {
-    :root {
-        --sidebar-width: 320px;
-    }
-}
-
-/* Mobile Devices & Small Tablets */
 @media (max-width: 800px) {
 
     .sidebar {
@@ -602,7 +559,7 @@ footer {
         width: 100%;
         height: auto;
 
-        padding: 40px 25px;
+        padding: 30px 25px;
     }
 
     .sidebar-header {
@@ -627,30 +584,41 @@ footer {
 
     .main-content {
         margin-left: 0;
-        width: 100%;
 
-        padding: 0 20px;
+        padding: 0 25px;
     }
 
     .content-section {
         min-height: auto;
 
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 70px;
+        padding-bottom: 70px;
     }
 
     .content-section h2 {
-        font-size: 26px;
+        font-size: 28px;
 
-        margin-bottom: 30px;
+        margin-bottom: 35px;
     }
 
-    /* Prevents wide gaps between words on narrow mobile screens */
-    .section-content p,
-    .research-item p,
-    .timeline-item p,
-    .publication p {
-        text-align: left;
-    }
+}
 
+
+/* =========================================
+   PROFILE PHOTO
+========================================= */
+
+.profile-photo {
+    display: block;
+
+    width: 105px;
+    height: 105px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    margin-bottom: 25px;
+
+    border: 2px solid rgba(255, 255, 255, 0.15);
 }
