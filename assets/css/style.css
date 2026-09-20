@@ -58,7 +58,7 @@ body {
     top: 0;
     left: 0;
 
-    width: var(--sidebar-width);
+    width: var(400px);
     height: 100vh;
 
     background-color: var(--charcoal);
