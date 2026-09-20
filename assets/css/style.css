@@ -266,16 +266,23 @@ body {
 
 
 /* =========================================
-   8. PARAGRAPHS
+   8. PARAGRAPHS & TEXT ALIGNMENT
 ========================================= */
 
-.section-content p {
+.section-content p,
+.research-item p,
+.timeline-item p,
+.publication p {
     margin-bottom: 22px;
     font-size: 15px;
     color: var(--text-light);
+    
+    /* Aligns text evenly on both left and right edges (Google Doc style) */
     text-align: justify;
+    
+    /* Adds subtle hyphenation so justified text doesn't create awkward gaps */
+    hyphens: auto;
 }
-
 
 /* =========================================
    9. RESEARCH
