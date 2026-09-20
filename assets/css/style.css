@@ -23,7 +23,7 @@
 
     --border: #e5e1e2;
 
-    --sidebar-width: 200px;
+    --sidebar-width: 300px;
 }
 
 
@@ -58,7 +58,7 @@ body {
     top: 0;
     left: 0;
 
-    width: var(400px);
+    width: var(--sidebar-width);
     height: 100vh;
 
     background-color: var(--charcoal);
@@ -561,7 +561,7 @@ footer {
 
 }
 /* =========================================
-   10. EDUCATION & EXPERIENCE
+   16. EDUCATION & EXPERIENCE
 ========================================= */
 
 .timeline-item {
@@ -610,14 +610,14 @@ footer {
 
 
 /* =========================================
-   PROFILE PHOTO
+   17. PROFILE PHOTO
 ========================================= */
 
 .profile-photo {
     display: block;
 
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
 
     object-fit: cover;
 
