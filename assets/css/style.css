@@ -551,7 +551,7 @@ footer {
    15. MOBILE
 ========================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 720px) {
 
     .sidebar {
         position: relative;
