@@ -1,0 +1,556 @@
+/* =========================================
+   MIRZA TAIRIN — PERSONAL PORTFOLIO
+   Main stylesheet
+========================================= */
+
+
+/* =========================================
+   1. COLOR & DESIGN VARIABLES
+========================================= */
+
+:root {
+    --charcoal: #292729;
+    --charcoal-light: #373437;
+
+    --soft-white: #faf9f7;
+    --white: #ffffff;
+
+    --text: #292729;
+    --text-light: #666166;
+
+    --pink: #c9829b;
+    --pink-dark: #ad637e;
+
+    --border: #e5e1e2;
+
+    --sidebar-width: 280px;
+}
+
+
+/* =========================================
+   2. GENERAL RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background-color: var(--soft-white);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   3. SIDEBAR
+========================================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: var(--sidebar-width);
+    height: 100vh;
+
+    background-color: var(--charcoal);
+    color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 55px 40px 35px;
+
+    overflow-y: auto;
+
+    z-index: 1000;
+}
+
+
+/* Name and identity */
+
+.sidebar-header {
+    margin-bottom: 55px;
+}
+
+.sidebar-header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 16px;
+}
+
+.sidebar-header p {
+    color: #d8d4d7;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   4. NAVIGATION
+========================================= */
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.nav-link {
+    position: relative;
+
+    display: block;
+
+    padding: 6px 0;
+
+    color: #e8e5e7;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    letter-spacing: 0.7px;
+
+    transition:
+        color 0.25s ease,
+        padding-left 0.25s ease;
+}
+
+.nav-link:hover {
+    color: var(--pink);
+    padding-left: 5px;
+}
+
+
+/* Active navigation item */
+
+.nav-link.active {
+    color: var(--pink);
+}
+
+
+/* Personal group */
+
+.nav-group {
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+.nav-group-title {
+    display: block;
+
+    color: #8f898d;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.sub-link {
+    padding-left: 12px;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   5. SIDEBAR FOOTER
+========================================= */
+
+.sidebar-footer {
+    margin-top: auto;
+
+    padding-top: 35px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.sidebar-footer a {
+    color: #bdb7bb;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    transition: color 0.25s ease;
+}
+
+.sidebar-footer a:hover {
+    color: var(--pink);
+}
+
+
+/* =========================================
+   6. MAIN CONTENT
+========================================= */
+
+.main-content {
+    margin-left: var(--sidebar-width);
+
+    max-width: 1000px;
+
+    padding: 0 80px;
+}
+
+
+/* =========================================
+   7. CONTENT SECTIONS
+========================================= */
+
+.content-section {
+    min-height: 100vh;
+
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.content-section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 50px;
+
+    position: relative;
+}
+
+
+/* Pink underline */
+
+.content-section h2::after {
+    content: "";
+
+    display: block;
+
+    width: 42px;
+    height: 2px;
+
+    background-color: var(--pink);
+
+    margin-top: 15px;
+}
+
+
+.section-content {
+    max-width: 720px;
+}
+
+
+/* =========================================
+   8. PARAGRAPHS
+========================================= */
+
+.section-content p {
+    margin-bottom: 22px;
+
+    font-size: 15px;
+
+    color: var(--text-light);
+}
+
+
+/* =========================================
+   9. RESEARCH
+========================================= */
+
+.research-item {
+    padding: 25px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.research-item:first-of-type {
+    border-top: 1px solid var(--border);
+}
+
+.research-item h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    margin-bottom: 8px;
+}
+
+.research-item p {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   10. PUBLICATIONS
+========================================= */
+
+.publication {
+    padding: 30px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.publication-year {
+    display: block;
+
+    color: var(--pink);
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+.publication h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 22px;
+
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+}
+
+.publication-authors {
+    font-size: 13px !important;
+
+    margin-bottom: 4px !important;
+}
+
+.publication-venue {
+    font-size: 13px !important;
+
+    font-style: italic;
+}
+
+.publication-links {
+    margin-top: 20px;
+
+    display: flex;
+
+    gap: 20px;
+}
+
+.publication-links a {
+    color: var(--pink-dark);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    border-bottom: 1px solid transparent;
+
+    transition: border-color 0.25s ease;
+}
+
+.publication-links a:hover {
+    border-bottom-color: var(--pink-dark);
+}
+
+
+/* =========================================
+   11. BUTTON
+========================================= */
+
+.button {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 10px 20px;
+
+    background-color: var(--charcoal);
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.button:hover {
+    background-color: var(--pink-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   12. PERSONAL SECTIONS
+========================================= */
+
+.personal-section {
+    padding: 35px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.personal-section h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    margin-bottom: 12px;
+}
+
+.personal-section a {
+    color: var(--pink-dark);
+
+    text-decoration: none;
+
+    font-size: 13px;
+}
+
+.personal-section a:hover {
+    text-decoration: underline;
+}
+
+
+/* Gallery placeholder */
+
+.gallery-placeholder {
+    margin-top: 20px;
+
+    padding: 55px 20px;
+
+    border: 1px dashed #d7d1d4;
+
+    text-align: center;
+
+    color: #999398;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   13. CONTACT
+========================================= */
+
+.contact-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.contact-links a {
+    color: var(--pink-dark);
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   14. FOOTER
+========================================= */
+
+footer {
+    padding: 35px 0;
+
+    color: #999398;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   15. MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+
+        padding: 30px 25px;
+    }
+
+    .sidebar-header {
+        margin-bottom: 25px;
+    }
+
+    .navigation {
+        gap: 3px;
+    }
+
+    .sidebar-footer {
+        margin-top: 25px;
+
+        padding-top: 20px;
+
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .main-content {
+        margin-left: 0;
+
+        padding: 0 25px;
+    }
+
+    .content-section {
+        min-height: auto;
+
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .content-section h2 {
+        font-size: 28px;
+
+        margin-bottom: 35px;
+    }
+
+}
