@@ -610,14 +610,14 @@ footer {
 .profile-photo {
     display: block;
 
-    width: 105px;
-    height: 105px;
+    width: 75px;
+    height: 75px;
 
     object-fit: cover;
 
     border-radius: 50%;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 
     border: 2px solid rgba(255, 255, 255, 0.15);
 }
