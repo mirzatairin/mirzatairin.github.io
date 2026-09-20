@@ -23,13 +23,17 @@
 
     --border: #e5e1e2;
 
-    /* Adjust sidebar width here */
+    /* =====================================
+       DESKTOP SIDEBAR WIDTH
+       Change this number to resize sidebar.
+       Example: 280px, 300px, 320px
+    ===================================== */
     --sidebar-width: 300px;
 }
 
 
 /* =========================================
-   2. GENERAL RESET & BASE STYLES
+   2. GENERAL RESET
 ========================================= */
 
 * {
@@ -44,10 +48,17 @@ html {
 
 body {
     font-family: "Inter", "Segoe UI", Arial, sans-serif;
+
     background-color: var(--soft-white);
     color: var(--text);
+
     line-height: 1.8;
+
     overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
 }
 
 
@@ -57,6 +68,7 @@ body {
 
 .sidebar {
     position: fixed;
+
     top: 0;
     left: 0;
 
@@ -77,27 +89,34 @@ body {
     z-index: 1000;
 }
 
-/* Profile Photo */
+
+/* =========================================
+   4. PROFILE PHOTO
+========================================= */
 
 .profile-photo {
     display: block;
 
-    width: 105px;
-    height: 105px;
+    width: 75px;
+    height: 75px;
 
     object-fit: cover;
 
     border-radius: 50%;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 
     border: 2px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Name and identity */
+
+/* =========================================
+   5. SIDEBAR HEADER
+========================================= */
 
 .sidebar-header {
     margin-bottom: 55px;
+
     min-width: 0;
 }
 
@@ -111,9 +130,7 @@ body {
 
     margin-bottom: 16px;
 
-    /* Text wrapping protection */
     overflow-wrap: break-word;
-    word-break: break-word;
 }
 
 .sidebar-header p {
@@ -122,14 +139,12 @@ body {
     font-size: 13px;
     line-height: 1.7;
 
-    /* Text wrapping protection */
     overflow-wrap: break-word;
-    word-break: break-word;
 }
 
 
 /* =========================================
-   4. NAVIGATION
+   6. NAVIGATION
 ========================================= */
 
 .navigation {
@@ -140,9 +155,9 @@ body {
 }
 
 .nav-link {
-    position: relative;
-
     display: block;
+
+    position: relative;
 
     padding: 6px 0;
 
@@ -153,8 +168,6 @@ body {
     font-size: 13px;
     letter-spacing: 0.7px;
 
-    overflow-wrap: break-word;
-
     transition:
         color 0.25s ease,
         padding-left 0.25s ease;
@@ -162,16 +175,18 @@ body {
 
 .nav-link:hover {
     color: var(--pink);
+
     padding-left: 5px;
 }
-
-/* Active navigation item */
 
 .nav-link.active {
     color: var(--pink);
 }
 
-/* Personal group */
+
+/* =========================================
+   7. PERSONAL NAVIGATION GROUP
+========================================= */
 
 .nav-group {
     margin-top: 25px;
@@ -200,7 +215,7 @@ body {
 
 
 /* =========================================
-   5. SIDEBAR FOOTER
+   8. SIDEBAR FOOTER
 ========================================= */
 
 .sidebar-footer {
@@ -223,8 +238,6 @@ body {
 
     font-size: 11px;
 
-    overflow-wrap: break-word;
-
     transition: color 0.25s ease;
 }
 
@@ -234,32 +247,31 @@ body {
 
 
 /* =========================================
-   6. MAIN CONTENT
+   9. MAIN CONTENT
 ========================================= */
 
 .main-content {
     margin-left: var(--sidebar-width);
+
     width: calc(100% - var(--sidebar-width));
 
     max-width: 1100px;
 
-    /* Responsive dynamic padding for all screen sizes */
-    padding: 0 clamp(25px, 5vw, 80px);
+    padding: 0 80px;
 
     overflow-wrap: break-word;
-    word-break: break-word;
 }
 
 
 /* =========================================
-   7. CONTENT SECTIONS
+   10. CONTENT SECTIONS
 ========================================= */
 
 .content-section {
     min-height: 100vh;
 
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 120px;
+    padding-bottom: 120px;
 
     border-bottom: 1px solid var(--border);
 }
@@ -267,8 +279,7 @@ body {
 .content-section h2 {
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(26px, 4vw, 32px);
-
+    font-size: 32px;
     font-weight: 400;
 
     letter-spacing: 0.5px;
@@ -279,6 +290,7 @@ body {
 
     overflow-wrap: break-word;
 }
+
 
 /* Pink underline */
 
@@ -295,36 +307,42 @@ body {
     margin-top: 15px;
 }
 
+
+/* =========================================
+   11. SECTION CONTENT
+========================================= */
+
 .section-content {
     width: 100%;
+
     max-width: 800px;
 }
 
 
 /* =========================================
-   8. PARAGRAPHS & TEXT ALIGNMENT
+   12. GENERAL PROSE
 ========================================= */
 
 .section-content p,
 .research-item p,
-.timeline-item p,
-.publication p {
+.timeline-item .timeline-description,
+.personal-section p {
     margin-bottom: 22px;
 
     font-size: 15px;
 
     color: var(--text-light);
 
-    /* Clean justified text with automatic hyphenation */
     text-align: justify;
+
     hyphens: auto;
+
     overflow-wrap: break-word;
-    word-break: break-word;
 }
 
 
 /* =========================================
-   9. RESEARCH
+   13. RESEARCH
 ========================================= */
 
 .research-item {
@@ -341,7 +359,6 @@ body {
     font-family: Georgia, "Times New Roman", serif;
 
     font-size: 20px;
-
     font-weight: 400;
 
     margin-bottom: 8px;
@@ -355,7 +372,7 @@ body {
 
 
 /* =========================================
-   10. EDUCATION & EXPERIENCE
+   14. EDUCATION & EXPERIENCE
 ========================================= */
 
 .timeline-item {
@@ -384,7 +401,6 @@ body {
     font-family: Georgia, "Times New Roman", serif;
 
     font-size: 21px;
-
     font-weight: 400;
 
     margin-bottom: 5px;
@@ -393,22 +409,22 @@ body {
 }
 
 .timeline-institution {
-    font-size: 13px !important;
+    font-size: 13px;
 
-    color: var(--text) !important;
+    color: var(--text);
 
-    margin-bottom: 12px !important;
+    margin-bottom: 12px;
 
     overflow-wrap: break-word;
 }
 
-.timeline-item p:last-child {
-    margin-bottom: 0;
+.timeline-description {
+    margin-bottom: 0 !important;
 }
 
 
 /* =========================================
-   11. PUBLICATIONS
+   15. PUBLICATIONS
 ========================================= */
 
 .publication {
@@ -433,7 +449,6 @@ body {
     font-family: Georgia, "Times New Roman", serif;
 
     font-size: 22px;
-
     font-weight: 400;
 
     line-height: 1.5;
@@ -443,21 +458,33 @@ body {
     overflow-wrap: break-word;
 }
 
-.publication-authors {
-    font-size: 13px !important;
 
-    margin-bottom: 4px !important;
+/* Publication metadata should remain left-aligned */
+
+.publication-authors {
+    font-size: 13px;
+
+    color: var(--text);
+
+    margin-bottom: 4px;
 
     overflow-wrap: break-word;
 }
 
 .publication-venue {
-    font-size: 13px !important;
+    font-size: 13px;
+
+    color: var(--text-light);
 
     font-style: italic;
 
+    margin-bottom: 0;
+
     overflow-wrap: break-word;
 }
+
+
+/* Publication links */
 
 .publication-links {
     margin-top: 20px;
@@ -478,8 +505,6 @@ body {
 
     border-bottom: 1px solid transparent;
 
-    overflow-wrap: break-word;
-
     transition: border-color 0.25s ease;
 }
 
@@ -489,7 +514,7 @@ body {
 
 
 /* =========================================
-   12. BUTTONS
+   16. BUTTONS
 ========================================= */
 
 .button {
@@ -522,7 +547,7 @@ body {
 
 
 /* =========================================
-   13. PERSONAL SECTIONS
+   17. PERSONAL SECTIONS
 ========================================= */
 
 .personal-section {
@@ -535,7 +560,6 @@ body {
     font-family: Georgia, "Times New Roman", serif;
 
     font-size: 23px;
-
     font-weight: 400;
 
     margin-bottom: 12px;
@@ -549,13 +573,12 @@ body {
     text-decoration: none;
 
     font-size: 13px;
-
-    overflow-wrap: break-word;
 }
 
 .personal-section a:hover {
     text-decoration: underline;
 }
+
 
 /* Gallery placeholder */
 
@@ -577,12 +600,11 @@ body {
 
 
 /* =========================================
-   14. CONTACT
+   18. CONTACT
 ========================================= */
 
 .contact-links {
     display: flex;
-
     flex-direction: column;
 
     gap: 10px;
@@ -604,7 +626,7 @@ body {
 
 
 /* =========================================
-   15. FOOTER
+   19. FOOTER
 ========================================= */
 
 footer {
@@ -619,17 +641,9 @@ footer {
 
 
 /* =========================================
-   16. MEDIA QUERIES / RESPONSIVENESS
+   20. MOBILE
 ========================================= */
 
-/* Tablets / Medium Displays */
-@media (max-width: 1024px) {
-    :root {
-        --sidebar-width: 320px;
-    }
-}
-
-/* Mobile Devices */
 @media (max-width: 768px) {
 
     .sidebar {
@@ -663,6 +677,7 @@ footer {
 
     .main-content {
         margin-left: 0;
+
         width: 100%;
 
         padding: 0 20px;
@@ -671,8 +686,8 @@ footer {
     .content-section {
         min-height: auto;
 
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 70px;
+        padding-bottom: 70px;
     }
 
     .content-section h2 {
@@ -681,12 +696,12 @@ footer {
         margin-bottom: 35px;
     }
 
-    /* Standard left-align for small screens prevents large gaps between justified words */
+    /* Left alignment is more comfortable on narrow screens */
+
     .section-content p,
     .research-item p,
-    .timeline-item p,
-    .publication p {
+    .timeline-item .timeline-description,
+    .personal-section p {
         text-align: left;
     }
-
 }
