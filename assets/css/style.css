@@ -97,8 +97,8 @@ img {
 .profile-photo {
     display: block;
 
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
 
     object-fit: cover;
 
