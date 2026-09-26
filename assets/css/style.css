@@ -705,3 +705,19 @@ footer {
         text-align: left;
     }
 }
+
+
+/* Game screenshots */
+
+.game-image {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.game-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
