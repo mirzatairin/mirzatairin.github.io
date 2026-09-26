@@ -721,3 +721,20 @@ footer {
     display: block;
     margin: 0 auto;
 }
+
+
+
+/* Game screenshots */
+
+.book-image {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.book-image img {
+    width: 70%;
+    max-width: 450px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
