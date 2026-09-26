@@ -708,26 +708,25 @@ footer {
 
 
 
-/* Video game gallery */
+/* General image gallery */
 
-.game-gallery {
+.gallery {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-top: 30px;
 }
 
-.game-image {
+.gallery-item {
     width: 100%;
     margin: 0;
 }
 
-.game-image img {
+.gallery-item img {
     width: 100%;
     height: auto;
     display: block;
 }
-
 
 .book-image {
     margin: 25px 0;
