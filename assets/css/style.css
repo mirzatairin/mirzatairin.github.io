@@ -710,6 +710,8 @@ footer {
 
 /* General image gallery */
 
+/* Video game gallery */
+
 .gallery {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr);
