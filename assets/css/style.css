@@ -710,13 +710,13 @@ footer {
 /* Game screenshots */
 
 .game-image {
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin: 25px 0;
     text-align: center;
 }
 
 .game-image img {
-    max-width: 50%;
+    width: 70%;
+    max-width: 650px;
     height: auto;
     display: block;
     margin: 0 auto;
